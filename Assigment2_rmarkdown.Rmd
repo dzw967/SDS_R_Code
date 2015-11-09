@@ -220,7 +220,10 @@ ep = ep + facet_wrap(~region, scales = "free_y")
 plot(ep)
 ```
 
-Some regions seem to be following the overall trend, however others only post on e.g. saturdays - maybe we should pick out the most populous, as the differences in population between these are rather large. The larger regions appear to be more representative in terms of this particular tendency.
+This plot definetely gives a more detailed view on what is going on, however might not be able to tell the true story about the underlying process.
+It's clearly seen that the tendancy to post on mondays, comes from observations from the regions Karnataka, Madhya- and Uttar Pradesh, regions that together completely dominates the other regions in numbers of post and therefore is able to shape the first weekday plot. It should be said however, that we find no reason to believe, that there should be some sort of heterogeneity to these states. Therefore it seems clear that larger shares of post is posted on mondays, mabye due to bribes in a large scale could be taking place during weekends.
+
+We could also try to pick out the most populous, as the differences in population between these are rather large. The larger regions appear to be more representative in terms of this particular tendency.
 ```{r, geom_bar, echo = FALSE, warning = FALSE, message = FALSE, results = "hide"}
 spat2 = subset(india.spatial.df, citiziens > 50000000)
 pl = ggplot(spat2, aes(x = region, y = citiziens/100000000))
